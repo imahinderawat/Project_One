@@ -3,27 +3,29 @@
 <!doctype html><html lang="en-GB">
 <title> CSCS TEST INFO - Online Exams </title>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Work+Sans:400,700" rel="stylesheet">
-<link rel="stylesheet" href="/style.css" type="text/css">
-
 <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/style.css" type="text/css">
 
 <div class="topnav" id="myTopnav">
+<div class="topnav1" id="myTopnav1">
   <a href="/" class="active">CSCS Test Info</a>
   <a href="/about">About</a>
   <a href="/practice-test">Practice Test</a>
   <a href="/contact-us">Contact Us</a>
   <a href="/login">Sign in</a>
   <a href="/register">Register</a>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+  <a href="javascript:void(0);" class="icon" onclick="myFunctionMenu()">
     <i class="fa fa-bars"></i>
   </a>
+</div>
 </div>
 
 <script>
 /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-function myFunction() {
+function myFunctionMenu() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
     x.className += " responsive";
@@ -32,6 +34,23 @@ function myFunction() {
   }
 }
 </script>
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("myTopnav1");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
+
+
 
 </head>
 
